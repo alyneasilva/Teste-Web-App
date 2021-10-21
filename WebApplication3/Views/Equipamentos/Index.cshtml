@@ -1,0 +1,109 @@
+﻿@model IEnumerable<WebApplication3.Models.Equipamentos>
+
+@{
+    ViewData["Title"] = "Equipamentos";
+}
+
+<h1>Equipamentos</h1>
+
+<p>
+    <a asp-action="Create">INSERIR</a>
+</p>
+<table class="table" style="text-align: center">
+    <thead>
+        <tr>
+            <th>
+                Equipamento
+            </th>
+            <th>
+                Modelo
+            </th>
+            <th>
+                Serial
+            </th>
+            <!--<th>
+                Tipo
+            </th> -->
+            <th>
+                Local
+            </th>
+            <th>
+                Armário
+            </th>
+            <th>
+                Prateleira
+            </th>
+            <!--<th>
+                Aplicativo Instalado
+            </th> -->
+            <th>
+                Sistema
+            </th>
+            <th>
+                Status
+            </th>
+            <!--<th>
+                Local Utilização
+            </th>
+            <th>
+                Usuário
+            </th>
+            <th>
+                Data
+            </th> -->
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Equipamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Modelo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SerialNumber)
+            </td>
+            <!--<td>
+                @Html.DisplayFor(modelItem => item.Tipo)
+            </td> -->
+            <td>
+                @Html.DisplayFor(modelItem => item.Local)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Armario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prateleira)
+            </td>
+            <!--<td>
+                @Html.DisplayFor(modelItem => item.AplicativoInstalado)
+            </td> -->
+            <td>
+                @Html.DisplayFor(modelItem => item.SistemaAutomação)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <!--<td>
+                @Html.DisplayFor(modelItem => item.LocalUtilização)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Usuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data)
+            </td> -->
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>|
+                <a asp-action="Usar" asp-route-id="@item.Id">Usar</a> |
+                <a asp-action="Devolver" asp-route-id="@item.Id">Devolver</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
