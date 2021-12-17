@@ -26,6 +26,17 @@ namespace WebApplication3
         {
             services.AddControllersWithViews();
             services.AddDbContext<Context>();
+
+            //Alyne
+            services.AddDistributedMemoryCache();
+
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromSeconds(10);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
+            //Fim Alyne
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +58,10 @@ namespace WebApplication3
             app.UseRouting();
 
             app.UseAuthorization();
+
+            //Alyne
+            app.UseSession();
+            //Fim Alyne
 
             app.UseEndpoints(endpoints =>
             {

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using WebApplication3.Models;
+using WebApplication3.Controllers;
+using Microsoft.AspNetCore.Session;
+
 
 namespace WebApplication3.Controllers
 {
@@ -20,12 +24,26 @@ namespace WebApplication3.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            if (HttpContext.Session.GetInt32("usuarioLogadoID") != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Usuarios");
+            }
         }
 
         public IActionResult Privacy()
         {
-            return View();
+            if (HttpContext.Session.GetInt32("usuarioLogadoID") != null)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Usuarios");
+            }
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

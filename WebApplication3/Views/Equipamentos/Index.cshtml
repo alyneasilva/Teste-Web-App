@@ -21,9 +21,7 @@
             <th>
                 Serial
             </th>
-            <!--<th>
-                Tipo
-            </th> -->
+            <!--
             <th>
                 Local
             </th>
@@ -33,24 +31,14 @@
             <th>
                 Prateleira
             </th>
-            <!--<th>
-                Aplicativo Instalado
-            </th> -->
+            
             <th>
                 Sistema
             </th>
             <th>
                 Status
-            </th>
-            <!--<th>
-                Local Utilização
-            </th>
-            <th>
-                Usuário
-            </th>
-            <th>
-                Data
             </th> -->
+           
             <th></th>
         </tr>
     </thead>
@@ -66,9 +54,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.SerialNumber)
             </td>
-            <!--<td>
-                @Html.DisplayFor(modelItem => item.Tipo)
-            </td> -->
+            <!-- /*
             <td>
                 @Html.DisplayFor(modelItem => item.Local)
             </td>
@@ -77,32 +63,17 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Prateleira)
-            </td>
-            <!--<td>
-                @Html.DisplayFor(modelItem => item.AplicativoInstalado)
-            </td> -->
-            <td>
-                @Html.DisplayFor(modelItem => item.SistemaAutomação)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <!--<td>
-                @Html.DisplayFor(modelItem => item.LocalUtilização)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Usuario)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Data)
-            </td> -->
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>|
-                <a asp-action="Usar" asp-route-id="@item.Id">Usar</a> |
-                <a asp-action="Devolver" asp-route-id="@item.Id">Devolver</a>
-            </td>
+            </td> */ -->
+            
+            
+        <td>
+            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>|
+            <a asp-action="Usar2" asp-route-id="@item.Id">Usar</a> |
+            <a asp-action="Devolver2" asp-route-id="@item.Id">Devolver</a> |
+            <!--<a asp-area="" asp-controller="QRCode" asp-action="Index">Gerar QR Code</a> |-->
+        </td>
         </tr>
 }
     </tbody>

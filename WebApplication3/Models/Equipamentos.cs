@@ -11,16 +11,23 @@ namespace WebApplication3.Models
         public string Equipamento { get; set; }
         public string Modelo { get; set; }
         public string SerialNumber { get; set; }
-        public string Tipo { get; set; }
+        public DateTime DataCadastro { get; set; }
         public string Local { get; set; }
         public string Armario { get; set; }
         public int Prateleira { get; set; }
+        public string SistOper { get; set; }
         public string AplicativoInstalado { get; set; }
         public string SistemaAutomação { get; set; }
         public string Status { get; set; }
-        public string LocalUtilização { get; set; }
-        public string Usuario { get; set; }
-        public DateTime Data { get; set; }
+        public string PC { get; set; }
+        public string RC { get; set; }
+        public string ItemRC { get; set; }
+
+        public string NF { get; set; }
+        public DateTime DataGarantia { get; set; }
+
+        public string Observacao { get; set; }
 
     }
+
 }
